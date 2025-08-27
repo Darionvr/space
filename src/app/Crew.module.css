@@ -11,6 +11,10 @@
 }
 
 /****************** MEET THE CREW  ********************/
+.main section{
+    padding-inline:1rem ;
+}
+
 .main section>p {
     font-size: var(--fp-5-size);
     color: white;
