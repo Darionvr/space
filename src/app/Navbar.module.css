@@ -1,0 +1,144 @@
+.nav {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-barlow-cond);
+    margin-top: 1rem;
+}
+
+.navbarmenu {
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    font-size: var(--fp-8-size);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 736px;
+    gap: 6.5%;
+    padding-inline: 8.70%;
+    background-color: rgba(255, 255, 255, 0.096);
+
+    backdrop-filter: blur(15px);
+    color: white;
+
+
+    span {
+        font-weight: bold;
+        margin-right: .5rem;
+    }
+
+}
+
+.closeicon {
+    display: none;
+}
+
+.nav>img:first-of-type {
+    margin-left: 4%;
+}
+
+.nav hr {
+    width: 38%;
+    margin-right: -2rem;
+    opacity: .25;
+    z-index: 99;
+}
+
+.navbarmenu>li {
+    height: 100%;
+    padding: 2.2rem 0;
+    border-bottom: 3.5px solid transparent;
+    margin-top: 3px;
+    transition: border .5s ease-out;
+
+    &:hover {
+        cursor: pointer;
+        border-bottom: 3.5px solid white;
+    }
+}
+
+.navbarmenu li.active {
+    border-bottom: 3.5px solid white;
+
+}
+
+.nav>img:last-of-type {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .nav hr {
+        display: none;
+    }
+
+    .navbarmenu {
+        padding-inline: 6.25%;
+        width: 83%;
+    }
+
+    .nav {
+        margin-top: 0;
+    }
+
+
+
+}
+
+@media (max-width: 768px) {
+    .closeicon {
+        display: block;
+       align-self: flex-end;
+        padding: 2rem;
+        position: absolute;
+        top: 0;
+        right: 15%;
+    }
+
+    .navbarmenu {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        position: fixed;
+        inset: 0 0 0 30%;
+        gap: 2rem;
+        padding-left: 2rem;
+        background-color: rgba(255, 255, 255, 0.015);
+        z-index: 99;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+
+    }
+
+    .navbarmenu li {
+        padding: 0;
+        height: unset;
+        width: 100%;
+    }
+
+    .nav>img:last-of-type {
+        display: block;
+    }
+
+    .nav {
+        height: 88px;
+        padding-inline: 2rem;
+    }
+
+
+    .nav>img:first-of-type {
+        margin-left: 0;
+    }
+
+    .navbarmenu li.active {
+        border-bottom: none;
+        border-right: 3.5px solid white;
+
+    }
+    .navbarmenu[data-visible='true']{
+        transform: translateX(0%);
+
+    }
+}

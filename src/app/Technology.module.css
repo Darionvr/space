@@ -1,0 +1,255 @@
+.main {
+    background-image: url(../../public/assets/technology/background-technology-desktop.jpg);
+    height: 1024px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-top: calc(1rem + 95px);
+
+}
+
+/****************** NAV DOTS ********************/
+.main ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    color: white;
+    font-size: var(--fp-4-size);
+    gap: 2rem;
+    margin-right: 2rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        aspect-ratio: 1/1;
+        border: 1px solid rgba(255, 255, 255, 0.250);
+        border-radius: 50%;
+        transition: border-color .5s ease-out;
+    }
+}
+
+.main ul a:hover {
+    border-color: white;
+
+}
+
+.active {
+    background-color: white;
+    color: black;
+    opacity: 0;
+    animation: fadeIn 0.9s ease forwards;
+}
+
+@keyframes fadeIn {
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.main section {
+    padding-left: 1rem;
+}
+
+/****************** SPACE LAUNCH 101  ********************/
+.main section>p {
+    font-size: var(--fp-5-size);
+    color: white;
+    font-family: var(--font-barlow-cond);
+    text-transform: uppercase;
+    letter-spacing: var(--fp-5-letterSpacing);
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+
+    span {
+        color: rgba(255, 255, 255, 0.247);
+        font-weight: bold;
+    }
+}
+
+/****************** CONTAINER  ********************/
+
+.main section article {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-block: 4rem;
+    opacity: 0;
+    animation: fadeIn 0.9s ease forwards;
+}
+
+@keyframes fadeIn {
+
+    to {
+        opacity: 1;
+    }
+}
+
+/****************** INFO CONTAINER ********************/
+
+.main article>div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+/****************** TERMINOLOGY ********************/
+
+.main article>div>p:first-of-type {
+    font-family: var(--font-bellefair);
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-size: var(--fp-4-size);
+}
+
+/****************** NAME ********************/
+
+.main article>div>h1 {
+    font-family: var(--font-bellefair);
+    color: white;
+    font-size: var(--fp-3-size);
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    max-width: 18ch;
+}
+
+/****************** DESCRIPTION ********************/
+
+.main article>div>p:last-of-type {
+    font-family: var(--font-barlow-regular);
+    color: var(--blue300);
+    font-size: var(--fp-9-size);
+    line-height: 180%;
+    max-width: 50ch;
+}
+
+/****************** IMAGES ********************/
+.squareimage {
+    display: block;
+}
+
+.landscapeimage {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        background-image: url('../../public/assets/technology/background-technology-tablet.jpg');
+        padding: calc(8rem + 95px) 0 0;
+        height: unset;
+        align-items: center;
+
+    }
+
+    .main section {
+        padding: 0;
+        width: 100%;
+    }
+
+    .main section>p {
+        padding-inline: 2.5rem;
+    }
+
+    .main section article {
+        display: grid;
+        text-align: center;
+        padding-bottom: 2.5rem;
+    }
+
+    .main ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .main article>div:last-of-type {
+        grid-row-start: 1;
+        width: 100%;
+        max-height: 357px;
+    }
+
+    .squareimage {
+        display: none;
+    }
+
+    .landscapeimage {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .main article>div>h1 {
+        max-width: unset;
+        font-size: 2.5rem;
+    }
+
+    .main article>div>p:last-of-type {
+        margin: auto;
+    }
+
+    .main ul {
+        margin: 0;
+        a {
+            width: 56px;
+        }
+    }
+
+    .main article>div>p:first-of-type {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: calc(2.5rem + 88px) 0 0;
+        background-image: url('../../public/assets/technology/background-technology-mobile.jpg');
+
+
+    }
+    .main article>div:first-of-type {
+        padding-inline: 1.5rem;
+    }
+
+    .main section>p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .main article>div:last-of-type {
+        max-height: 258px;
+        overflow: hidden;
+
+    }
+
+    .landscapeimage {
+        display: none;
+
+    }
+
+    .squareimage {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-position: 0 -5.5rem;
+    }
+        .main article>div>h1{
+            font-size: 1.5rem;
+        }
+        .main article>div>p:first-of-type{
+            font-size: 1.2rem;
+        }
+
+    .main ul {
+        a {
+            width: 40px;
+            font-size: 1.2rem;
+        }
+    }
+}

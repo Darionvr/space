@@ -1,0 +1,241 @@
+.main {
+    background-image: url(../../public/assets/crew/background-crew-desktop.jpg);
+    height: 1024px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: calc(1rem + 95px);
+
+}
+
+/****************** MEET THE CREW  ********************/
+.main section>p {
+    font-size: var(--fp-5-size);
+    color: white;
+    font-family: var(--font-barlow-cond);
+    text-transform: uppercase;
+    letter-spacing: var(--fp-5-letterSpacing);
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+
+    span {
+        color: rgba(255, 255, 255, 0.247);
+        font-weight: bold;
+    }
+}
+
+/****************** CONTAINER  ********************/
+.main section article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    max-height: 734px;
+    align-items: center;
+    gap: 2.5rem;
+    opacity: 0;
+    animation: fadeIn 0.9s ease forwards;
+
+}
+
+@keyframes fadeIn {
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/****************** INFO CONTAINER  ********************/
+.main article>div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    height: 734px;
+    gap: 1rem;
+    justify-content: center;
+    position: relative;
+}
+
+/****************** ROLE  ********************/
+.main article>div>p:first-of-type {
+    font-family: var(--font-bellefair);
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-size: var(--fp-4-size);
+}
+
+/****************** NAME ********************/
+
+.main article>div>h1 {
+    font-family: var(--font-bellefair);
+    color: white;
+    font-size: var(--fp-3-size);
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    max-width: 19ch;
+}
+
+/****************** BIO********************/
+
+.main article>div>p:last-of-type {
+    font-family: var(--font-barlow-regular);
+    color: var(--blue300);
+    font-size: var(--fp-9-size);
+    line-height: 180%;
+    max-width: 55ch;
+}
+
+/****************** IMAGE CONTAINER  ********************/
+
+.main article>div:last-of-type {
+    width: 539px;
+    max-height: 734px;
+
+    img {
+        width: 100%;
+        mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    }
+}
+
+/****************** DOTS  ********************/
+
+.main ul {
+    display: flex;
+    gap: 3.3rem;
+    align-items: center;
+    height: min-content;
+    list-style: none;
+    position: absolute;
+    bottom: 3rem;
+
+    a {
+        display: block;
+        width: 15px;
+        aspect-ratio: 1/1;
+        background-color: rgba(255, 255, 255, 0.200);
+        border-radius: 50%;
+        transition: background-color .5s ease-out;
+    }
+
+}
+
+.main ul a:hover {
+    background-color: rgba(255, 255, 255, 0.503);
+}
+
+.main ul a.active {
+    background-color: white;
+    opacity: 0;
+    animation: fadedot 0.9s ease forwards;
+}
+
+@keyframes fadedot {
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main {
+        background-image: url('../../public/assets/crew/background-crew-tablet.jpg');
+        padding: calc(8rem + 95px) 5% 0;
+        height: unset;
+
+    }
+
+    .main section {
+        padding: 0;
+        width: 100%;
+    }
+
+    .main>section>article {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding-top: 2.5rem;
+        gap: 2rem;
+        max-height: unset;
+
+    }
+
+    .main article>div:first-of-type {
+        height: unset;
+    }
+
+    .main article>div>p:last-of-type {
+        padding-bottom: 1rem;
+    }
+
+    .main article>div>h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+        max-width: unset;
+    }
+
+    .main article>div>p:first-of-type {
+        font-size: 1.5rem;
+    }
+
+    .main ul {
+        position: unset;
+        justify-content: center;
+
+        a {
+            width: 10px;
+        }
+    }
+
+    .main article>div:last-of-type {
+        max-height: unset;
+        max-width: 446px;
+        padding-inline: 1rem;
+        overflow-y: hidden;
+
+        img {
+            mask-image: none;
+            -webkit-mask-image: none;
+            margin-bottom: -5px;
+        }
+
+
+    }
+
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: calc(2.5rem + 88px) 1.5rem 1.5rem;
+        background-image: url('../../public/assets/crew/background-crew-mobile.jpg');
+    }
+
+    .main section {
+        text-align: center;
+    }
+
+    .main section>p {
+        font-size: 1rem;
+    }
+
+    .main article>div>h1 {
+        font-size: 1.5rem;
+    }
+
+    .main article>div:last-of-type {
+        max-width: 271px;
+    }
+
+    .main article>div:last-of-type {
+        padding: 1rem;
+
+        img {
+            width: 100%;
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+        }
+    }
+}

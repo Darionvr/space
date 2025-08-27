@@ -1,0 +1,213 @@
+.main {
+    background-image: url(../../public/assets/destination/background-destination-desktop.jpg);
+    height: 1024px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: calc(1rem + 95px);
+}
+
+
+/***************** MAIN CONTAINER  *****************/
+.main section {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 3rem;
+    gap: 1.5rem;
+
+}
+
+/***************** PICK YOUR DESTINATION  *****************/
+.main>section>p {
+    font-size: var(--fp-5-size);
+    color: white;
+    font-family: var(--font-barlow-cond);
+    text-transform: uppercase;
+    letter-spacing: var(--fp-5-letterSpacing);
+    margin-right: auto;
+
+    span {
+        color: rgba(255, 255, 255, 0.247);
+        font-weight: bold;
+    }
+}
+
+/***************** DESTINATIONS CONTAINER *****************/
+
+.main article {
+    display: flex;
+    gap: 2rem;
+    opacity: 0;
+    animation: fadeIn 0.9s ease forwards;
+
+}
+
+@keyframes fadeIn {
+
+    to {
+        opacity: 1;
+    }
+}
+
+.main article>div {
+    padding: 12% 2.5rem;
+
+    hr {
+        width: 100%;
+        opacity: 25%;
+    }
+}
+
+/***************** INFO CONTAINER *****************/
+
+.main article>div:last-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/***************** DESTINATIONS NAVBAR BUTTONS *****************/
+
+.main section article ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.main section article ul button {
+    color: white;
+    font-family: var(--font-barlow-cond);
+    letter-spacing: var(--fp-7-8-letterSpacing);
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: .5rem 0;
+    transition: border .3s ease-out;
+
+    &:hover {
+        cursor: pointer;
+        border-bottom: 3px solid white;
+    }
+}
+
+.main section article button.active {
+    border-bottom: 3.5px solid white;
+
+}
+
+
+/***************** PLANET INFO *****************/
+
+.main article h1 {
+    text-transform: uppercase;
+    color: white;
+    font-size: var(--fp-2-size);
+    font-weight: 400;
+}
+
+
+.main>section>article>div>p {
+    font-size: var(--fp-9-size);
+    color: var(--blue300);
+    font-family: var(--font-barlow-regular);
+    max-width: 43ch;
+    line-height: 180%;
+}
+
+/***************** DISTANCE + TIME *****************/
+
+.main>section>article>div>div:last-of-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-transform: uppercase;
+
+    p {
+        display: grid;
+        gap: .75rem;
+        color: var(--blue300);
+        font-family: var(--font-barlow-cond);
+    }
+
+    span {
+        font-family: var(--font-bellefair);
+        font-size: var(--fp-6-size);
+    }
+}
+
+@media (max-width: 1024px) {
+    .main {
+        background-image: url('../../public/assets/destination/background-destination-tablet.jpg');
+        padding: calc(8rem + 95px) 5% 2.5rem;
+        height: unset;
+    }
+
+    .main section {
+        padding: 0;
+        width: 100%;
+    }
+
+    .main article {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .main article>div:first-of-type {
+        padding: 2.5rem;
+
+        img {
+            max-width: 300px;
+            max-height: 300px;
+        }
+    }
+
+    .main article>div:last-of-type {
+        padding: 0.7rem;
+        gap: 1.5rem;
+    }
+
+    .main section article ul {
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .main {
+        background-image: url('../../public/assets/destination/background-destination-mobile.jpg');
+        padding: calc(2.5rem + 88px) 2.5rem;
+    }
+    .main section{
+        text-align: center;
+    }
+    .main>section>p{
+        font-size: 1rem;
+        margin: auto;
+    }
+
+    .main article>div:first-of-type {
+        img {
+            max-width: 150px;
+            max-height: 150px;
+        }
+    }
+
+    .main>section>article>div>p {
+        width: unset;
+
+    }
+
+    .main article h1 {
+        font-size: 3.5rem;
+    }
+    .main>section>article>div>div:last-of-type {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1.5rem;
+    }
+    
+}
