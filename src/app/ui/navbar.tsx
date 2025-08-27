@@ -17,7 +17,7 @@ const Navbar = () => {
         <>
             <nav className={styles.nav}>
 
-                <img src="/assets/shared/logo.svg" alt="logo" />
+                <Link href={pathname !== '/' ? '/' : '#'}> <img src="/assets/shared/logo.svg" alt="logo" /></Link>
                 <hr />
                 <ul className={styles.navbarmenu} data-visible={isMenuVisible ? 'true' : 'false'}>
                     <img className={styles.closeicon} src="/assets/shared/icon-close.svg" alt="close icon" onClick={toggleMenu}/>
