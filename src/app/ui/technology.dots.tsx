@@ -3,10 +3,15 @@ import data from '../../lib/data.json'
 import Link from 'next/link'
 import style from '@/app/Technology.module.css'
 
-const TechnologyDots = ({slug} : {slug: string}) => {
+type Props = {
+    slug: string;
+    technology: Array<{ name: string }>; 
+};
+
+const TechnologyDots = ({slug, technology} : Props) => {
   return (
      <ul>
-            {data.technology.map((t, i) => (
+            {technology.map((t, i) => (
                 <li key={t.name}> <Link className={slug === t.name.replace(/ /g, '_') ? `${style.active}` : ''}  href={`/technology/${t.name.replace(/ /g, '_')}`}> {i + 1} </Link> </li>
             ))}
         </ul>

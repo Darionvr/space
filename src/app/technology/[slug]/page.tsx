@@ -7,12 +7,11 @@ import style from '@/app/Technology.module.css'
 
 
 const PageTech = async ({ params }: { params: { slug: string } }) => {
-
+    
+    const { technology } = data;
     const { slug } = await params;
-
     const formattedName = slug.replace(/_/g, ' ');
-
-    const tech = data.technology.find(
+    const tech = technology.find(
         (t) => t.name.toLowerCase() === formattedName.toLowerCase());
 
     if (!tech) return notFound();
@@ -20,7 +19,8 @@ const PageTech = async ({ params }: { params: { slug: string } }) => {
     return (
         <article>
             <Dots
-                slug={slug} />
+                slug={params.slug} 
+                technology={technology} />
             <div>
                 <p>The terminology</p>
                 <h1>{tech.name}</h1>
@@ -32,14 +32,14 @@ const PageTech = async ({ params }: { params: { slug: string } }) => {
                 <Image src={tech.images.portrait}
                     alt={`Technology ${tech.name} image`}
                     width={515}
-                    height={527} 
-                    className={style.squareimage}/>
+                    height={527}
+                    className={style.squareimage} />
 
                 <Image src={tech.images.landscape}
                     alt={`Technology ${tech.name} image`}
                     width={768}
-                    height={310} 
-                    className={style.landscapeimage}/>
+                    height={310}
+                    className={style.landscapeimage} />
             </div>
 
         </article>

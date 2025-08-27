@@ -6,8 +6,9 @@ import { notFound } from 'next/navigation';
 
 const PlanetPage = async ({ params }: { params: { slug: string } }) => {
 
+    const { destinations } = data;
     const { slug } = await params;
-    const destination = data.destinations.find(
+    const destination = destinations.find(
         (d) => d.name.toLowerCase() === slug
     );
 
@@ -23,7 +24,8 @@ const PlanetPage = async ({ params }: { params: { slug: string } }) => {
             </div>
             <div>
                 <DestinationNav
-                    slug={slug} />
+                    slug={slug} 
+                    destinations={destinations}/>
                 <h1>
                     {destination.name}
                 </h1>
