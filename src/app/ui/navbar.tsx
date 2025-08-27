@@ -7,12 +7,20 @@ import styles from '@/app/Navbar.module.css'
 
 const Navbar = () => {
 
+    const links = [
+        { position: '00', name: 'Home', href: '/', },
+        { position: '01', name: 'Destinations', href: '/destinations', },
+        { position: '02', name: 'Crew', href: '/crew', },
+        {
+            position: '03', name: 'Technology', href: '/technology',
+        }]
     const pathname = usePathname();
     const [isMenuVisible, setIsMenuVisible] = useState(false);
     const toggleMenu = () => {
         setIsMenuVisible(prev => !prev);
     };
-    
+
+    console.log(pathname)
     return (
         <>
             <nav className={styles.nav}>
@@ -20,13 +28,21 @@ const Navbar = () => {
                 <Link href={pathname !== '/' ? '/' : '#'}> <img src="/assets/shared/logo.svg" alt="logo" /></Link>
                 <hr />
                 <ul className={styles.navbarmenu} data-visible={isMenuVisible ? 'true' : 'false'}>
-                    <img className={styles.closeicon} src="/assets/shared/icon-close.svg" alt="close icon" onClick={toggleMenu}/>
-                    <li className={pathname === '/' ? `${styles.active}` : ''}> <Link href="/" onClick={toggleMenu}><span>00</span>Home </Link></li>
-                    <li className={pathname.startsWith('/destinations') ? `${styles.active}` : ''}> <Link href="/destinations" onClick={toggleMenu}> <span>01</span>Destination</Link></li>
-                    <li className={pathname.startsWith('/crew') ? `${styles.active}` : ''}><Link href="/crew" onClick={toggleMenu}><span>02</span>Crew</Link></li>
-                    <li className={pathname.startsWith('/technology') ? `${styles.active}` : ''}> <Link href="/technology" onClick={toggleMenu}><span>03</span>Technology</Link></li>
+                    <img className={styles.closeicon} src="/assets/shared/icon-close.svg" alt="close icon" onClick={toggleMenu} />
+                    {links.map((link) => (
+                        <li className={
+                            link.href === '/'
+                                ? pathname === '/' ? styles.active : ''
+                                : pathname.startsWith(link.href) ? styles.active : ''
+                        }
+                            key={link.position}>
+                            <Link href={link.href} onClick={toggleMenu}>
+                                <span>{link.position}</span>{link.name}</Link>
+                        </li>
+                    ))}
+
                 </ul>
-                <img src="/assets/shared/icon-hamburger.svg" alt='mobile menu button' onClick={toggleMenu}/>
+                <img src="/assets/shared/icon-hamburger.svg" alt='mobile menu button' onClick={toggleMenu} />
             </nav>
         </>
     )
