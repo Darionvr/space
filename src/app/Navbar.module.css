@@ -89,7 +89,7 @@
 @media (max-width: 768px) {
     .closeicon {
         display: block;
-       align-self: flex-end;
+        align-self: flex-end;
         padding: 2rem;
         position: absolute;
         top: 0;
@@ -115,7 +115,7 @@
     .navbarmenu li {
         padding: 0;
         height: unset;
-        width: 100%;
+        width: 90%;
     }
 
     .nav>img:last-of-type {
@@ -132,12 +132,19 @@
         margin-left: 0;
     }
 
+    .navbarmenu li:hover {
+        cursor: pointer;
+        border-bottom: none;
+         border-right: 3.5px solid white;
+    }
+
     .navbarmenu li.active {
         border-bottom: none;
         border-right: 3.5px solid white;
 
     }
-    .navbarmenu[data-visible='true']{
+
+    .navbarmenu[data-visible='true'] {
         transform: translateX(0%);
 
     }
